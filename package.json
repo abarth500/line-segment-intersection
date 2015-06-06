@@ -1,0 +1,24 @@
+{
+  "name": "line-segment-intersection",
+  "version": "0.0.2",
+  "description": "Listing all intersections from line segment array.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "duration-log": ">0.0.4",
+    "functional-red-black-tree": "^1.0.1",
+    "has-intersection": ">0.0.1",
+    "heap": "^0.2.6",
+    "rbush": "^1.4.0"
+  },
+  "devDependencies": {
+    "duration-log": ">0.0.3"
+  },
+  "scripts": {
+    "test": "node test/test,js"
+  },
+  "author": "Shohei Yokoyama",
+  "license": "MIT"
+}
