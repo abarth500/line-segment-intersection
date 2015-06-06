@@ -1,10 +1,14 @@
 {
   "name": "line-segment-intersection",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Listing all intersections from line segment array.",
   "main": "index.js",
   "directories": {
     "test": "test"
+  },
+  "repository": {
+     "type": "git",
+     "url": "https://github.com/abarth500/line-segment-intersection"
   },
   "dependencies": {
     "duration-log": ">0.0.4",
