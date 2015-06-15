@@ -3,7 +3,7 @@
  */
 var hasIntersection = require('has-intersection');
 var RBush = require('rbush');
-var RTreeSplitQuery = function (dataset, callback, scope) {
+var RTreeSplitQuery = function (dataset, callback, finishHandler, scope) {
     this.dataset = dataset;
     this.input = [];
     this.mark = {};
@@ -25,6 +25,7 @@ var RTreeSplitQuery = function (dataset, callback, scope) {
     dataset.forEach(function (lineA, idxA) {
         this.findIntersection(lineA, idxA);
     }, this);
+    finishHandler.apply(this.scope,[]);
 };
 RTreeSplitQuery.prototype.findIntersection = function (lineA, idxA) {
     this.rTree.remove(this.input[idxA]);

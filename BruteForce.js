@@ -3,7 +3,7 @@
  */
 
 var hasIntersection = require('has-intersection');
-var BruteForce = function(dataset,callback,scope){
+var BruteForce = function(dataset,callback,finishHandler,scope){
     this.nIntersections = 0;
     this.callback = callback || function(){};
     this.scope = scope || this;
@@ -20,6 +20,7 @@ var BruteForce = function(dataset,callback,scope){
             }
         }
     }
+    finishHandler.apply(this.scope,[]);
 };
 BruteForce.prototype.nIntersections = null;
 module.exports = BruteForce;

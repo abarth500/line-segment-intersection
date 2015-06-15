@@ -4,7 +4,7 @@
 
 var hasIntersection = require('has-intersection');
 var RBush = require('rbush');
-var RTree = function(dataset,callback,scope){
+var RTree = function(dataset,callback, finishHandler,scope){
     this.dataset = dataset;
     this.input = [];
     this.nIntersections = 0;
@@ -37,6 +37,7 @@ var RTree = function(dataset,callback,scope){
             }
         },this);
     },this);
+    finishHandler.apply(this.scope,[]);
 };
 RTree.prototype.nIntersections = null;
 RTree.prototype.dataset = null;

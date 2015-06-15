@@ -46,7 +46,7 @@ function rand() {
     var sweepLine = new SweepLine(dataset.concat(),function(idxA,idxB,x,y){
         //callback for each intersection
         //result.push(["SL",idxA,idxB,x,y]);
-    },this);
+    },function(){},this);
     t.stop();
 
 
@@ -54,7 +54,7 @@ function rand() {
     var rTree = new RTree(dataset.concat(),function(idxA,idxB,x,y){
         //callback for each intersection
         //result.push(["RT",idxA,idxB,x,y]);
-    },this);
+    },function(){},this);
     t.stop();
 
 
@@ -62,14 +62,14 @@ function rand() {
     var splitQuery = new SplitQuery(dataset.concat(),function(idxA,idxB,x,y){
         //callback for each intersection
         //result.push(["SQ",idxA,idxB,x,y]);
-    },this);
+    },function(){},this);
     t.stop();
 
     var t = duration.start("BuruteForce");
     var bruteForce = new BruteForce(dataset.concat(),function(idxA,idxB,x,y){
         //callback for each intersection
         //result.push(["BF",idxA,idxB,x,y]);
-    },this);
+    },function(){},this);
     t.stop();
 
     console.log("\tBentley-Ottmann  :"+sweepLine.nIntersections+" intersections, time="+duration.sumup["Bentley-Ottmann"]);
